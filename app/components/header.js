@@ -1,13 +1,16 @@
 "use client";
 
 import { Button, Navbar, Dropdown } from "flowbite-react";
+import { BsCartDash } from "react-icons/bs";
 
 const Header = () => {
   return (
-    <Navbar fluid className="bg-red-600">
+    <Navbar className=" bg-red-600">
+      {/* <Navbar.Toggle /> */}
+
       <Navbar.Brand href="#">
         <svg
-          className="w-[48px] h-[48px] text-white"
+          className="w-[48px] h-[48px] text-white hidden md:block"
           aria-hidden="true"
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
@@ -20,12 +23,14 @@ const Header = () => {
             d="M9 8h10M9 12h10M9 16h10M5 8h0m0 4h0m0 4h0"
           />
         </svg>
-        <span className="self-center whitespace-nowrap md:text-base lg:text-lg xl:text-3xl font-semibold text-white">
+        <h1 className="md:text-base lg:text-lg xl:text-3xl font-semibold text-white">
           Shop Digest
-        </span>
+        </h1>
         <div className="h-[24px] w-[2px] bg-white mx-4" />
-        <div className="self-center whitespace-nowrap text-xl font-semibold text-white">
-          <Dropdown label="Platform" inline>
+        <div className="flex self-center whitespace-nowrap text-xl font-semibold text-white">
+          <BsCartDash className="md:hidden" />
+          <p className="hidden md:block">Platform</p>
+          <Dropdown inline>
             <Dropdown.Item>Dashboard</Dropdown.Item>
             <Dropdown.Item>Settings</Dropdown.Item>
             <Dropdown.Item>Earnings</Dropdown.Item>
@@ -33,9 +38,10 @@ const Header = () => {
           </Dropdown>
         </div>
       </Navbar.Brand>
+
       <div className="flex gap-3 items-center md:order-2">
         <svg
-          class="w-6 h-6 text-white"
+          className="w-6 h-6 text-white hidden md:block"
           aria-hidden="true"
           xmlns="http://www.w3.org/2000/svg"
           fill="currentColor"
@@ -45,7 +51,7 @@ const Header = () => {
         </svg>
 
         <svg
-          class="w-6 h-6 text-white"
+          className="w-6 h-6 text-white"
           aria-hidden="true"
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
@@ -61,7 +67,7 @@ const Header = () => {
         <Button size="xs" className="rounded-none	bg-blue-700">
           <span>
             <svg
-              class="w-6 h-6 mr-1 text-white"
+              className="w-6 h-6 mr-1 text-white hidden md:block"
               aria-hidden="true"
               xmlns="http://www.w3.org/2000/svg"
               fill="currentColor"
@@ -77,7 +83,7 @@ const Header = () => {
           Add post
           <span>
             <svg
-              class="w-6 h-6 ml-1 text-white"
+              className="w-6 h-6 ml-1 text-white hidden md:block"
               aria-hidden="true"
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -95,7 +101,7 @@ const Header = () => {
         </Button>
         <span>
           <svg
-            class="w-7 h-7 text-white"
+            className="w-7 h-7 text-white"
             aria-hidden="true"
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -110,8 +116,7 @@ const Header = () => {
             />
           </svg>
         </span>
-        <p className="text-white">Login</p>
-        <Navbar.Toggle />
+        <p className="text-white hidden md:block">Login</p>
       </div>
       <Navbar.Collapse>
         <Navbar.Link href="#" className="text-white">
