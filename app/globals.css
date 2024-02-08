@@ -1,3 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.justify-between {
+  justify-content: flex-start !important;
+}
+/* .flex-wrap {
+  flex-wrap: nowrap !important;
+} */

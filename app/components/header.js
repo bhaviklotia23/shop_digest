@@ -6,7 +6,7 @@ import { BsCartDash } from "react-icons/bs";
 const Header = () => {
   return (
     <Navbar className=" bg-red-600">
-      {/* <Navbar.Toggle /> */}
+      <Navbar.Toggle />
 
       <Navbar.Brand href="#">
         <svg
@@ -23,9 +23,9 @@ const Header = () => {
             d="M9 8h10M9 12h10M9 16h10M5 8h0m0 4h0m0 4h0"
           />
         </svg>
-        <h1 className="md:text-base lg:text-lg xl:text-3xl font-semibold text-white">
+        <h3 className="text-sm lg:text-lg xl:text-3xl font-semibold text-white">
           Shop Digest
-        </h1>
+        </h3>
         <div className="h-[24px] w-[2px] bg-white mx-4" />
         <div className="flex self-center whitespace-nowrap text-xl font-semibold text-white">
           <BsCartDash className="md:hidden" />
@@ -39,9 +39,9 @@ const Header = () => {
         </div>
       </Navbar.Brand>
 
-      <div className="flex gap-3 items-center md:order-2">
+      <div className="flex ml-2 gap-3 items-center md:order-2">
         <svg
-          className="w-6 h-6 text-white hidden md:block"
+          className="w-6 h-6  text-white hidden md:block"
           aria-hidden="true"
           xmlns="http://www.w3.org/2000/svg"
           fill="currentColor"
