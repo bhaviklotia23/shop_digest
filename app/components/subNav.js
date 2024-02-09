@@ -51,6 +51,9 @@ const SubNav = () => {
           Home
         </Navbar.Link>
         <Navbar.Link href="#" className="text-md text-black">
+          About
+        </Navbar.Link>
+        <Navbar.Link href="#" className="text-md text-black">
           Company
         </Navbar.Link>
         <Navbar.Link href="#" className="text-md text-black">

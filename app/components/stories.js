@@ -6,6 +6,34 @@ import image1 from "../../public/1.jpg";
 import image2 from "../../public/2.jpg";
 import image4 from "../../public/4.jpg";
 import image6 from "../../public/6.jpg";
+// import data from "./data";
+
+const data = [
+  {
+    image: image1,
+    title: "Noteworthy technology acquisitions 2021",
+  },
+  {
+    image: image2,
+    title: "Noteworthy technology acquisitions 2021",
+  },
+  {
+    image: image4,
+    title: "Noteworthy technology acquisitions 2021",
+  },
+  {
+    image: image1,
+    title: "Noteworthy technology acquisitions 2021",
+  },
+  {
+    image: image2,
+    title: "Noteworthy technology acquisitions 2021",
+  },
+  {
+    image: image4,
+    title: "Noteworthy technology acquisitions 2021",
+  },
+];
 
 const Stories = () => {
   return (
@@ -23,83 +51,38 @@ const Stories = () => {
           </p>
         </div>
 
-        <div class="grid grid-cols-4 gap-4 mt-10 px-4 pb-4">
-          <div class="grid grid-cols-subgrid gap-4 col-span-3">
-            <div>
-              <Card
-                className="max-w-sm"
-                renderImage={() => (
-                  <Image width={500} height={300} src={image1} alt="image 1" />
-                )}
-              >
-                <h5 className="text-md font-semibold tracking-tight text-gray-900 dark:text-white">
-                  Noteworthy technology acquisitions 2021
-                </h5>
-              </Card>
-            </div>
-            <div>
-              <Card
-                className="max-w-sm"
-                renderImage={() => (
-                  <Image width={500} height={300} src={image2} alt="image 1" />
-                )}
-              >
-                <h5 className="text-md font-semibold tracking-tight text-gray-900 dark:text-white">
-                  Noteworthy technology acquisitions 2021
-                </h5>
-              </Card>
-            </div>
-            <div>
-              <Card
-                className="max-w-sm"
-                renderImage={() => (
-                  <Image width={500} height={300} src={image4} alt="image 1" />
-                )}
-              >
-                <h5 className="text-md font-semibold tracking-tight text-gray-900 dark:text-white">
-                  Noteworthy technology acquisitions 2021
-                </h5>
-              </Card>
-            </div>
-            <div>
-              <Card
-                className="max-w-sm"
-                renderImage={() => (
-                  <Image width={500} height={300} src={image6} alt="image 1" />
-                )}
-              >
-                <h5 className="text-md font-semibold tracking-tight text-gray-900 dark:text-white">
-                  Noteworthy technology acquisitions 2021
-                </h5>
-              </Card>
-            </div>
-            <div>
-              <Card
-                className="max-w-sm"
-                renderImage={() => (
-                  <Image width={500} height={300} src={image1} alt="image 1" />
-                )}
-              >
-                <h5 className="text-md font-semibold tracking-tight text-gray-900 dark:text-white">
-                  Noteworthy technology acquisitions 2021
-                </h5>
-              </Card>
-            </div>
-            <div>
-              <Card
-                className="max-w-sm"
-                renderImage={() => (
-                  <Image width={500} height={300} src={image2} alt="image 1" />
-                )}
-              >
-                <h5 className="text-md font-semibold tracking-tight text-gray-900 dark:text-white">
-                  Noteworthy technology acquisitions 2021
-                </h5>
-              </Card>
-            </div>
+        <div className="grid grid-cols-4 gap-7 mt-10 px-4 pb-4">
+          <div className="grid grid-cols-subgrid gap-3 col-span-3">
+            {data?.map((item, index) => (
+              <div key={index}>
+                <div className="flex">
+                  <Card
+                    className="max-w-sm rounded-none shadow-none border-none mb-8 "
+                    renderImage={() => (
+                      <Image
+                        width={500}
+                        height={300}
+                        src={item.image}
+                        alt={`image ${index + 1}`}
+                      />
+                    )}
+                  >
+                    <h5 className="text-md font-semibold tracking-tight text-gray-900 dark:text-white">
+                      {item.title}
+                    </h5>
+
+                  </Card>
+                  <div className="md:block hidden h-64 w-[1px] bg-slate-300 ml-2" />
+
+                  {/* {index % 3 === 2 && (
+                    <div className="md:block hidden h-1 w-64 bg-slate-300 ml-2" />
+                  )} */}
+                </div>
+              </div>
+            ))}
           </div>
           <div>
-            <Card className="radius-none ">
+            <Card className="max-w-sm rounded-none shadow-none border-grey-100">
               <div className="-m-6">
                 <h5 className="flex text-2xl justify-center font-semibold tracking-tight bg-black text-white dark:text-white p-2">
                   Join the community
