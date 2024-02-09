@@ -15,10 +15,16 @@ const data = [
   },
   {
     image: image2,
-    title: "Noteworthy technology acquisitions 2021",
+    title: "Noteworthy technology acquisitions 2021 Noteworthy technology acquisitions 2021",
   },
   {
     image: image4,
+    title: "Noteworthy technology acquisitions 2021 Noteworthy technology acquisitions 2021",
+  },
+];
+const data1 = [
+  {
+    image: image6,
     title: "Noteworthy technology acquisitions 2021",
   },
   {
@@ -27,10 +33,6 @@ const data = [
   },
   {
     image: image2,
-    title: "Noteworthy technology acquisitions 2021",
-  },
-  {
-    image: image4,
     title: "Noteworthy technology acquisitions 2021",
   },
 ];
@@ -51,9 +53,62 @@ const Stories = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-4 gap-7 mt-10 px-4 pb-4">
+        <div className="grid grid-cols-4 gap-4 mt-10 px-4">
           <div className="grid grid-cols-subgrid gap-3 col-span-3">
             {data?.map((item, index) => (
+              <div key={index}>
+                <div className="flex">
+                  <Card
+                    className="max-w-sm rounded-none shadow-none border-none "
+                    renderImage={() => (
+                      <Image
+                        width={500}
+                        height={300}
+                        src={item.image}
+                        alt={`image ${index + 1}`}
+                      />
+                    )}
+                  >
+                    <h5 className="text-md font-semibold tracking-tight text-gray-900 dark:text-white">
+                      {item.title}
+                    </h5>
+                  </Card>
+                  <div className="md:block hidden h-64 w-[1px] bg-slate-300 ml-2" />
+                </div>
+              </div>
+            ))}
+          </div>
+          <div>
+            <Card className="max-w-sm rounded-none shadow-none border-grey-100">
+              <div className="-m-6">
+                <h5 className="flex text-xl justify-center font-semibold tracking-tight bg-black text-white dark:text-white p-1">
+                  Join the community
+                </h5>
+                <div className="p-5 flex gap-4 flex-col">
+                  <h5 className="text-xl text-center font-semibold tracking-tight text-black dark:text-white">
+                    To know everything about Shopify
+                  </h5>
+                  <p className="font-normal text-md text-gray-700 dark:text-gray-400">
+                    Connect, share , and engage with community and build
+                    relationships.
+                  </p>
+                  <Button className="bg-red-700 rounded-none">
+                    Subscribe for $100/YEAR
+                  </Button>
+                  <Button className="bg-red-700 rounded-none">
+                    Subscribe for $100/YEAR
+                  </Button>
+                </div>
+              </div>
+            </Card>
+          </div>
+        </div>
+
+        <div className="md:block hidden h-[1px] w-[70%] bg-slate-300 mx-10" />
+
+        <div className="grid grid-cols-4 gap-7 mt-10 px-4 pb-4">
+          <div className="grid grid-cols-subgrid gap-3 col-span-3">
+            {data1?.map((item, index) => (
               <div key={index}>
                 <div className="flex">
                   <Card
@@ -70,40 +125,11 @@ const Stories = () => {
                     <h5 className="text-md font-semibold tracking-tight text-gray-900 dark:text-white">
                       {item.title}
                     </h5>
-
                   </Card>
                   <div className="md:block hidden h-64 w-[1px] bg-slate-300 ml-2" />
-
-                  {/* {index % 3 === 2 && (
-                    <div className="md:block hidden h-1 w-64 bg-slate-300 ml-2" />
-                  )} */}
                 </div>
               </div>
             ))}
-          </div>
-          <div>
-            <Card className="max-w-sm rounded-none shadow-none border-grey-100">
-              <div className="-m-6">
-                <h5 className="flex text-2xl justify-center font-semibold tracking-tight bg-black text-white dark:text-white p-2">
-                  Join the community
-                </h5>
-                <div className="px-6 py-8 flex gap-4 flex-col">
-                  <h5 className="text-xl text-center font-semibold tracking-tight text-black dark:text-white">
-                    To know everything about Shopify
-                  </h5>
-                  <p className="font-normal text-gray-700 dark:text-gray-400">
-                    Connect, share , and engage with community and build
-                    relationships.
-                  </p>
-                  <Button className="bg-red-700">
-                    Subscribe for $100/YEAR
-                  </Button>
-                  <Button className="bg-red-700">
-                    Subscribe for $100/YEAR
-                  </Button>
-                </div>
-              </div>
-            </Card>
           </div>
         </div>
       </div>
@@ -134,9 +160,7 @@ const Stories = () => {
               </h5>
             </Card>
           </div>
-          {/* Repeat the above structure for other cards */}
-
-          {/* Join the Community Card */}
+         
           <div className="sm:col-span-2 md:col-span-3 lg:col-span-4">
             <Card className="radius-none">
               <div className="-m-6">
